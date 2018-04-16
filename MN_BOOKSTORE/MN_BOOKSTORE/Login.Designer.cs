@@ -39,9 +39,9 @@
             this.User.AutoSize = true;
             this.User.Location = new System.Drawing.Point(66, 64);
             this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(35, 13);
+            this.User.Size = new System.Drawing.Size(27, 13);
             this.User.TabIndex = 0;
-            this.User.Text = "label1";
+            this.User.Text = "dooi";
             // 
             // label2
             // 
