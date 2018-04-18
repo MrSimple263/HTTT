@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\Connection.cs" />
     <Compile Include="TaoHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
