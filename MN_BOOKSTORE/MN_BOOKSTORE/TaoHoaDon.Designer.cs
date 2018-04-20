@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dghoadon = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tongtien = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txttensach = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtdongia = new System.Windows.Forms.TextBox();
+            this.sl = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtmsp = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dghoadon)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dghoadon
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 49);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(514, 227);
-            this.dataGridView1.TabIndex = 0;
+            this.dghoadon.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dghoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dghoadon.Location = new System.Drawing.Point(12, 49);
+            this.dghoadon.Name = "dghoadon";
+            this.dghoadon.Size = new System.Drawing.Size(514, 227);
+            this.dghoadon.TabIndex = 0;
             // 
             // label1
             // 
@@ -69,14 +69,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tổng Tiền:";
             // 
-            // label2
+            // tongtien
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(647, 158);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.tongtien.AutoSize = true;
+            this.tongtien.Location = new System.Drawing.Point(647, 158);
+            this.tongtien.Name = "tongtien";
+            this.tongtien.Size = new System.Drawing.Size(35, 13);
+            this.tongtien.TabIndex = 2;
+            this.tongtien.Text = "label2";
             // 
             // label3
             // 
@@ -126,19 +126,12 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Tổng Tiền:";
             // 
-            // textBox1
+            // txttensach
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 294);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(100, 339);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(210, 20);
-            this.textBox3.TabIndex = 10;
+            this.txttensach.Location = new System.Drawing.Point(100, 339);
+            this.txttensach.Name = "txttensach";
+            this.txttensach.Size = new System.Drawing.Size(210, 20);
+            this.txttensach.TabIndex = 10;
             // 
             // textBox4
             // 
@@ -157,20 +150,20 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Đơn Giá:";
             // 
-            // textBox5
+            // txtdongia
             // 
-            this.textBox5.Location = new System.Drawing.Point(413, 332);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 20);
-            this.textBox5.TabIndex = 13;
+            this.txtdongia.Location = new System.Drawing.Point(413, 332);
+            this.txtdongia.Name = "txtdongia";
+            this.txtdongia.Size = new System.Drawing.Size(196, 20);
+            this.txtdongia.TabIndex = 13;
             // 
-            // comboBox1
+            // sl
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 382);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(57, 21);
-            this.comboBox1.TabIndex = 14;
+            this.sl.FormattingEnabled = true;
+            this.sl.Location = new System.Drawing.Point(100, 382);
+            this.sl.Name = "sl";
+            this.sl.Size = new System.Drawing.Size(57, 21);
+            this.sl.TabIndex = 14;
             // 
             // button1
             // 
@@ -199,31 +192,40 @@
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // txtmsp
+            // 
+            this.txtmsp.Location = new System.Drawing.Point(100, 297);
+            this.txtmsp.Name = "txtmsp";
+            this.txtmsp.Size = new System.Drawing.Size(210, 20);
+            this.txtmsp.TabIndex = 18;
+            this.txtmsp.TextChanged += new System.EventHandler(this.txtmsp_TextChanged);
+            // 
             // TaoHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
+            this.Controls.Add(this.txtmsp);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.sl);
+            this.Controls.Add(this.txtdongia);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txttensach);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tongtien);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dghoadon);
             this.Name = "TaoHoaDon";
             this.Text = "HoaDon";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.TaoHoaDon_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dghoadon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,22 +233,22 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dghoadon;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label tongtien;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txttensach;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtdongia;
+        private System.Windows.Forms.ComboBox sl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtmsp;
     }
 }
