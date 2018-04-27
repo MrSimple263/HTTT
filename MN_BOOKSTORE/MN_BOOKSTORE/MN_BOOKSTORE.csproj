@@ -45,6 +45,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chitiet_Sach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chitiet_Sach.Designer.cs">
+      <DependentUpon>Chitiet_Sach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KiemKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KiemKho.Designer.cs">
+      <DependentUpon>KiemKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QL_Sach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL_Sach.Designer.cs">
+      <DependentUpon>QL_Sach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sach_TheLoai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sach_TheLoai.Designer.cs">
+      <DependentUpon>Sach_TheLoai.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaoHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Chitiet_Sach.resx">
+      <DependentUpon>Chitiet_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KiemKho.resx">
+      <DependentUpon>KiemKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +101,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QL_Sach.resx">
+      <DependentUpon>QL_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sach_TheLoai.resx">
+      <DependentUpon>Sach_TheLoai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaoHoaDon.resx">
       <DependentUpon>TaoHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +122,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{eef6c445-ec30-4ef4-aa29-2167993f3bb6}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{4be4226a-c82c-4289-92a4-2d6cae758f74}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

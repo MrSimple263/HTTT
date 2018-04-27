@@ -37,14 +37,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txttensach = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txttongtien = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtdongia = new System.Windows.Forms.TextBox();
-            this.sl = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
             this.txtmsp = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.sl = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dghoadon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,13 +134,13 @@
             this.txttensach.Size = new System.Drawing.Size(210, 20);
             this.txttensach.TabIndex = 10;
             // 
-            // textBox4
+            // txttongtien
             // 
-            this.textBox4.Location = new System.Drawing.Point(413, 385);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(196, 20);
-            this.textBox4.TabIndex = 11;
+            this.txttongtien.Location = new System.Drawing.Point(413, 385);
+            this.txttongtien.Name = "txttongtien";
+            this.txttongtien.ReadOnly = true;
+            this.txttongtien.Size = new System.Drawing.Size(196, 20);
+            this.txttongtien.TabIndex = 11;
             // 
             // label8
             // 
@@ -154,43 +155,39 @@
             // 
             this.txtdongia.Location = new System.Drawing.Point(413, 332);
             this.txtdongia.Name = "txtdongia";
+            this.txtdongia.ReadOnly = true;
             this.txtdongia.Size = new System.Drawing.Size(196, 20);
             this.txtdongia.TabIndex = 13;
             // 
-            // sl
+            // clear
             // 
-            this.sl.FormattingEnabled = true;
-            this.sl.Location = new System.Drawing.Point(100, 382);
-            this.sl.Name = "sl";
-            this.sl.Size = new System.Drawing.Size(57, 21);
-            this.sl.TabIndex = 14;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(713, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.clear.Location = new System.Drawing.Point(713, 332);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(75, 23);
+            this.clear.TabIndex = 15;
+            this.clear.Text = "Clear";
+            this.clear.UseVisualStyleBackColor = true;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(676, 378);
+            this.button2.Location = new System.Drawing.Point(713, 372);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 26);
             this.button2.TabIndex = 16;
             this.button2.Text = "Create";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnadd
             // 
-            this.button3.Location = new System.Drawing.Point(632, 332);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnadd.Location = new System.Drawing.Point(632, 332);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 23);
+            this.btnadd.TabIndex = 17;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // txtmsp
             // 
@@ -200,19 +197,39 @@
             this.txtmsp.TabIndex = 18;
             this.txtmsp.TextChanged += new System.EventHandler(this.txtmsp_TextChanged);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(632, 375);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Delete";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // sl
+            // 
+            this.sl.FormattingEnabled = true;
+            this.sl.Location = new System.Drawing.Point(100, 382);
+            this.sl.Name = "sl";
+            this.sl.Size = new System.Drawing.Size(62, 21);
+            this.sl.TabIndex = 21;
+            this.sl.SelectedIndexChanged += new System.EventHandler(this.sl_SelectedIndexChanged);
+            // 
             // TaoHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
-            this.Controls.Add(this.txtmsp);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.sl);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.txtmsp);
+            this.Controls.Add(this.btnadd);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.clear);
             this.Controls.Add(this.txtdongia);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txttongtien);
             this.Controls.Add(this.txttensach);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -242,13 +259,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txttensach;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txttongtien;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtdongia;
-        private System.Windows.Forms.ComboBox sl;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.TextBox txtmsp;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ComboBox sl;
     }
 }

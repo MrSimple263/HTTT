@@ -29,10 +29,14 @@ namespace DAL
            
             //
             SqlCommand sqlCommand = new SqlCommand(query,conn);
+            sqlCommand.CommandType = commandType;
             //lấy param 
-            foreach(SqlParameter param in sqlParameters)
+            if (sqlParameters!=null)
             {
-                sqlCommand.Parameters.Add(param);
+                foreach (SqlParameter param in sqlParameters)
+                {
+                    sqlCommand.Parameters.Add(param);
+                }
             }
             DataTable myTable = new DataTable();
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -40,12 +44,11 @@ namespace DAL
             return myTable;
         }
         //thực hiện updatedate dữ liệu inser/delete/update
-        //thuộc tính notify là trả về thông báo thành công hoặc lỗi 
-        public void excuteupdate(string query, SqlParameter[] sqlParameters,CommandType commandType,out string notify)
+        public void excuteupdate(string query, SqlParameter[] sqlParameters,CommandType commandType)
         {
-            notify = "";
             conn.Open();
             SqlCommand cmdupdate = new SqlCommand(query, conn);
+            cmdupdate.CommandType = commandType;
             foreach(SqlParameter param in sqlParameters)
             {
                 cmdupdate.Parameters.Add(param);
@@ -53,13 +56,10 @@ namespace DAL
             try
             {
                 cmdupdate.ExecuteNonQuery();
-                notify = "cập nhật thành công";
             }
             catch (SqlException ex)
             {
-                notify = ex.Message;
                 Debug.Write(ex.ToString());
-                
             }
             finally
             {
@@ -67,31 +67,35 @@ namespace DAL
             }
         }
         //trả về giá trị đơn
-        //notify trả về thông báo
-        //nhớ kiểm tra null và ép kiểu khi xử lí
-        public object excutescalar(string query, SqlParameter[] sqlParameters,CommandType commandType, out string notify)
+        public int excutescalar(string query, SqlParameter[] sqlParameters,CommandType commandType)
         {
-            notify = "";
             conn.Open();
             SqlCommand cmdupdate = new SqlCommand(query, conn);
-            foreach (SqlParameter param in sqlParameters)
+            if (sqlParameters != null)
             {
-                cmdupdate.Parameters.Add(param);
+                foreach (SqlParameter param in sqlParameters)
+                {
+                    cmdupdate.Parameters.Add(param);
+                }
             }
-            try
-            {
-                return cmdupdate.ExecuteScalar();
-            }
+           try
+                {
+                Debug.Write(cmdupdate.ExecuteScalar());
+                    if (cmdupdate.ExecuteScalar() != null)
+                         {
+                            return int.Parse(cmdupdate.ExecuteScalar().ToString());
+                         } 
+                }
             catch (SqlException ex)
-            {
-                notify = ex.Message;
-                Debug.Write(ex.ToString());
-            }
+                {
+                    Debug.Write(ex.ToString());
+                }
             finally
-            {
-                conn.Close();
-            }
-            return null;
+                {
+                    conn.Close();
+                }
+        
+            return -1;
         }
     }
 }

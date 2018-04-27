@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-    class HoaDon_BLL
+    public class HoaDon_BLL
     {
         DAL.DAL dAL = new DAL.DAL();
         public DataTable getAll()
@@ -16,11 +16,20 @@ namespace BLL
             string query = "hoadon_selectall";
             return dAL.excutedata(query, null, CommandType.StoredProcedure);
         }
-        public void insert(SqlParameter[] sqlParameters,out string notify)
+        public int getMax()
         {
-            notify = "";
+            string query = "select max(id) from HOADON";
+            return dAL.excutescalar(query, null, CommandType.Text);
+         }
+        public void insert(string date,float tongtien)
+        {
+        
             string query = "hoadon_insert";
-            dAL.excuteupdate(query, sqlParameters, CommandType.StoredProcedure,out notify);
+            SqlParameter[] sqlParameters= {
+                new SqlParameter("@ngaylap", date),
+                new SqlParameter("@tongtien", tongtien)
+            };
+            dAL.excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
         }
     }
 }
