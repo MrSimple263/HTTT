@@ -15,6 +15,11 @@ namespace BLL
             string query = "sach_selectall";
             return (new DAL.DAL().excutedata(query,null, CommandType.StoredProcedure));
         }
+        public int getidmax()
+        {
+            string query = "select max(id) from SACH";
+            return (new DAL.DAL().excutescalar(query, null, CommandType.Text));
+        }
         public DataTable theloai(int idsach)
         {
             string query = "theloaisach";
@@ -22,6 +27,26 @@ namespace BLL
                 new SqlParameter("@idsach",idsach)
             };
             return (new DAL.DAL().excutedata(query, sqlParameters, CommandType.StoredProcedure));
+        }
+        public void delete (int idsach)
+        {
+            string query = "sach_delete";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id",idsach)
+            };
+            new DAL.DAL().excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
+        }
+        public void insert (string name,int nxb,float dongia)
+        {
+            string query = "sach_insert";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@name",name),
+                new SqlParameter("@dongia",dongia),
+                new SqlParameter("@nxb",nxb)
+            };
+            new DAL.DAL().excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
         }
     }
 }

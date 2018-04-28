@@ -35,14 +35,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtdongia = new System.Windows.Forms.TextBox();
+            this.dgtacgia = new System.Windows.Forms.DataGridView();
+            this.dgtheloai = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.cbnxb = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtacgia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtheloai)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,63 +110,65 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.Visible = false;
             // 
-            // textBox2
+            // txtname
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtname.Location = new System.Drawing.Point(99, 79);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(391, 20);
+            this.txtname.TabIndex = 7;
             // 
-            // textBox3
+            // txtdongia
             // 
-            this.textBox3.Location = new System.Drawing.Point(99, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtdongia.Location = new System.Drawing.Point(99, 170);
+            this.txtdongia.Name = "txtdongia";
+            this.txtdongia.Size = new System.Drawing.Size(391, 20);
+            this.txtdongia.TabIndex = 9;
             // 
-            // textBox4
+            // dgtacgia
             // 
-            this.textBox4.Location = new System.Drawing.Point(99, 170);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(225, 20);
-            this.textBox4.TabIndex = 9;
+            this.dgtacgia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgtacgia.Location = new System.Drawing.Point(99, 212);
+            this.dgtacgia.Name = "dgtacgia";
+            this.dgtacgia.Size = new System.Drawing.Size(391, 93);
+            this.dgtacgia.TabIndex = 14;
             // 
-            // dataGridView1
+            // dgtheloai
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(91, 212);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(233, 93);
-            this.dataGridView1.TabIndex = 14;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(91, 333);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(233, 96);
-            this.dataGridView2.TabIndex = 15;
+            this.dgtheloai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgtheloai.Location = new System.Drawing.Point(99, 333);
+            this.dgtheloai.Name = "dgtheloai";
+            this.dgtheloai.Size = new System.Drawing.Size(391, 96);
+            this.dgtheloai.TabIndex = 15;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(163, 437);
+            this.button3.Location = new System.Drawing.Point(247, 437);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(77, 23);
             this.button3.TabIndex = 16;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // cbnxb
+            // 
+            this.cbnxb.FormattingEnabled = true;
+            this.cbnxb.Location = new System.Drawing.Point(99, 130);
+            this.cbnxb.Name = "cbnxb";
+            this.cbnxb.Size = new System.Drawing.Size(391, 21);
+            this.cbnxb.TabIndex = 17;
             // 
             // Chitiet_Sach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 472);
+            this.ClientSize = new System.Drawing.Size(528, 472);
+            this.Controls.Add(this.cbnxb);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.dgtheloai);
+            this.Controls.Add(this.dgtacgia);
+            this.Controls.Add(this.txtdongia);
+            this.Controls.Add(this.txtname);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -177,8 +179,8 @@
             this.Name = "Chitiet_Sach";
             this.Text = "Chitiet_Sach";
             this.Load += new System.EventHandler(this.Chitiet_Sach_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtacgia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtheloai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,11 +195,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtdongia;
+        private System.Windows.Forms.DataGridView dgtacgia;
+        private System.Windows.Forms.DataGridView dgtheloai;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbnxb;
     }
 }

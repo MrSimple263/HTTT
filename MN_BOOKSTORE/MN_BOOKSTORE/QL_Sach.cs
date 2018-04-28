@@ -43,9 +43,6 @@ namespace MN_BOOKSTORE
         private void QL_Sach_Load(object sender, EventArgs e)
         {
             load();
-            btnsua.Enabled = false;
-            btnxoa.Enabled = false;
-            btnchitiet.Enabled = false;
         }
         public void load()
         {
@@ -57,7 +54,14 @@ namespace MN_BOOKSTORE
             dgsach.Columns.Add(checkBoxColumn);
             dgsach.AllowUserToAddRows = false;
             dgsach.Rows[1].Cells[4].Value = true;
-            
+
+
+        }
+
+        private void btnxoa_Click(object sender, EventArgs e)
+        {
+            new BLL.Sach_BLL().delete(int.Parse(dgsach.SelectedRows[0].Cells[0].Value.ToString()));
+            load();
         }
     }
 }

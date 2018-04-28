@@ -83,6 +83,7 @@
             this.btnxoa.TabIndex = 5;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // QL_Sach
             // 
