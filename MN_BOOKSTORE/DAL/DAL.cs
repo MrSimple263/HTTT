@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Data;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -16,10 +17,10 @@ namespace DAL
         public DAL()
         {
             connectionStringBuilder = new SqlConnectionStringBuilder();
-            connectionStringBuilder.DataSource = "MINH";
+            connectionStringBuilder.DataSource = "DESKTOP-OVPQSPS";
             connectionStringBuilder.InitialCatalog = "CUAHANGSACH";
-            connectionStringBuilder.UserID = "minh";
-            connectionStringBuilder.Password = "123";
+            connectionStringBuilder.UserID = "sa";
+            connectionStringBuilder.Password = "12345";
             //tạo kết nối tới cơ sở dữ liệu
             conn = new SqlConnection(connectionStringBuilder.ToString());
         }
@@ -60,6 +61,7 @@ namespace DAL
             catch (SqlException ex)
             {
                 Debug.Write(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -96,6 +98,37 @@ namespace DAL
                 }
         
             return -1;
+        }
+        //trả về đơn giá trị 2
+        public string excutescalar2(string query, SqlParameter[] sqlParameters, CommandType commandType)
+        {
+            conn.Open();
+            SqlCommand cmdupdate = new SqlCommand(query, conn);
+            if (sqlParameters != null)
+            {
+                foreach (SqlParameter param in sqlParameters)
+                {
+                    cmdupdate.Parameters.Add(param);
+                }
+            }
+            try
+            {
+                Debug.Write(cmdupdate.ExecuteScalar());
+                if (cmdupdate.ExecuteScalar() != null)
+                {
+                    return cmdupdate.ExecuteScalar().ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Debug.Write(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return "";
         }
     }
 }

@@ -43,8 +43,11 @@
     <Compile Include="CTHD_BLL.cs" />
     <Compile Include="HoaDon_BLL.cs" />
     <Compile Include="Kho_BLL.cs" />
+    <Compile Include="Login_BLL.cs" />
     <Compile Include="NXB_BLL.cs" />
+    <Compile Include="PNK_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PXK_BLL.cs" />
     <Compile Include="Sach_BLL.cs" />
     <Compile Include="Sach_Tacgia.cs" />
     <Compile Include="Sach_Theloai.cs" />

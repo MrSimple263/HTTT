@@ -51,6 +51,30 @@
     <Compile Include="Chitiet_Sach.Designer.cs">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPNK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPNK.Designer.cs">
+      <DependentUpon>frmPNK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPXK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPXK.Designer.cs">
+      <DependentUpon>frmPXK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLKHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLKHO.Designer.cs">
+      <DependentUpon>frmQLKHO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemSach.Designer.cs">
+      <DependentUpon>frmThemSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="KiemKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +115,18 @@
     </Compile>
     <EmbeddedResource Include="Chitiet_Sach.resx">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPNK.resx">
+      <DependentUpon>frmPNK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPXK.resx">
+      <DependentUpon>frmPXK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLKHO.resx">
+      <DependentUpon>frmQLKHO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemSach.resx">
+      <DependentUpon>frmThemSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KiemKho.resx">
       <DependentUpon>KiemKho.cs</DependentUpon>
