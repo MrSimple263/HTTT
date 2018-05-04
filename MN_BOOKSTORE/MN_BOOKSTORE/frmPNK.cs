@@ -105,7 +105,7 @@ namespace MN_BOOKSTORE
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            new frmThemSach().ShowDialog();
+            new Chitiet_Sach().ShowDialog();
             dataTable.Clear();
             dataTable = new BLL.Sach_BLL().getAll();
         }

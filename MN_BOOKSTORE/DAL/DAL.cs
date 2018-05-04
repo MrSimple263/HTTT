@@ -20,12 +20,14 @@ namespace DAL
         public DAL()
         {
             connectionStringBuilder = new SqlConnectionStringBuilder();
-            connectionStringBuilder.DataSource = datasource;
+            connectionStringBuilder.DataSource = "MINH";
             connectionStringBuilder.InitialCatalog = "CUAHANGSACH";
-            connectionStringBuilder.UserID = userid;
-            connectionStringBuilder.Password = pass;
+            connectionStringBuilder.UserID = "minh";
+            connectionStringBuilder.Password = "123";
             //tạo kết nối tới cơ sở dữ liệu
             conn = new SqlConnection(connectionStringBuilder.ToString());
+            conn.Open();
+            conn.Close();
         }
         //thực hiện query để trả về datatable
         public DataTable excutedata(string query,SqlParameter[] sqlParameters,CommandType commandType)

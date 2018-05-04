@@ -51,11 +51,41 @@
     <Compile Include="Chitiet_Sach.Designer.cs">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDH_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDH_NhanVien.Designer.cs">
+      <DependentUpon>frmDH_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDH_QuanLi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDH_QuanLi.Designer.cs">
+      <DependentUpon>frmDH_QuanLi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDH_ThuKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDH_ThuKho.Designer.cs">
+      <DependentUpon>frmDH_ThuKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKetNoi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmKetNoi.Designer.cs">
       <DependentUpon>frmKetNoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNXB.Designer.cs">
+      <DependentUpon>frmNXB.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPNK.cs">
       <SubType>Form</SubType>
@@ -74,12 +104,6 @@
     </Compile>
     <Compile Include="frmQLKHO.Designer.cs">
       <DependentUpon>frmQLKHO.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmThemSach.Designer.cs">
-      <DependentUpon>frmThemSach.cs</DependentUpon>
     </Compile>
     <Compile Include="KiemKho.cs">
       <SubType>Form</SubType>
@@ -128,8 +152,23 @@
     <EmbeddedResource Include="Chitiet_Sach.resx">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDH_NhanVien.resx">
+      <DependentUpon>frmDH_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDH_QuanLi.resx">
+      <DependentUpon>frmDH_QuanLi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDH_ThuKho.resx">
+      <DependentUpon>frmDH_ThuKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKetNoi.resx">
       <DependentUpon>frmKetNoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNXB.resx">
+      <DependentUpon>frmNXB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPNK.resx">
       <DependentUpon>frmPNK.cs</DependentUpon>
@@ -139,9 +178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLKHO.resx">
       <DependentUpon>frmQLKHO.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmThemSach.resx">
-      <DependentUpon>frmThemSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KiemKho.resx">
       <DependentUpon>KiemKho.cs</DependentUpon>

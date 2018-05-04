@@ -26,12 +26,14 @@ namespace MN_BOOKSTORE
             try
             {
                 new DAL.DAL();
+                new frmLogin().ShowDialog();
                 this.Close();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+           
         }
     }
 }

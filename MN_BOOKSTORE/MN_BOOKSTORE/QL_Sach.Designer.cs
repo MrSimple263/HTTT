@@ -72,7 +72,7 @@
             this.btnchitiet.Name = "btnchitiet";
             this.btnchitiet.Size = new System.Drawing.Size(75, 23);
             this.btnchitiet.TabIndex = 4;
-            this.btnchitiet.Text = "Chi Tiết";
+            this.btnchitiet.Text = "làm mới";
             this.btnchitiet.UseVisualStyleBackColor = true;
             this.btnchitiet.Click += new System.EventHandler(this.button4_Click);
             // 

@@ -34,14 +34,14 @@ namespace MN_BOOKSTORE
                 {
                     MessageBox.Show("Đăng nhập thành công", "Kết quả",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (mess.Equals("NHAN VIEN")) {
-                        //
+                    if (mess.Equals("2")) {
+                        new frmDH_NhanVien().ShowDialog();
                     }
-                    else if (mess.Equals("QUAN LY")){
-                        //
+                    else if (mess.Equals("1")){
+                        new frmDH_QuanLi().ShowDialog();
                     }
-                    else if (mess.Equals("THU KHO")){
-                        //
+                    else if (mess.Equals("3")){
+                        new frmDH_ThuKho().ShowDialog();
                     }
                 }
             }catch(SqlException ex)

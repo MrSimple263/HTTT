@@ -30,7 +30,7 @@ namespace MN_BOOKSTORE
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            load();
         }
 
         private void dgsach_CellContentClick(object sender, DataGridViewCellEventArgs e)

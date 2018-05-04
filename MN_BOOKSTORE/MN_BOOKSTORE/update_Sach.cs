@@ -75,6 +75,41 @@ namespace MN_BOOKSTORE
             cbnxb.DisplayMember = "ten";
 
         }
-      
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //xóa thông tin tác giả cũ
+            new BLL.Sach_Tacgia().dell(QL_Sach.idsachchon);
+            //xóa thông tin thể loại đã chon
+            new BLL.Sach_Theloai().delete(QL_Sach.idsachchon);
+            //them lại thông tin tác giả
+            List<int> tacgiasach = new List<int>();
+            //dua id cac tac gia da chon vao danh sach
+            foreach (DataGridViewRow row in dgtacgia.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                if (Convert.ToBoolean(chk.Value) == true)
+                {
+                    tacgiasach.Add(int.Parse(row.Cells[0].Value.ToString()));
+                }
+            }
+            //thêm lại thông tin thể loại
+            List<int> theloaisach = new List<int>();
+            //dua id the loai vao danh sach
+            foreach (DataGridViewRow row in dgtheloai.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[2];
+                if (Convert.ToBoolean(chk.Value) == true)
+                {
+                    theloaisach.Add(int.Parse(row.Cells[0].Value.ToString()));
+                }
+            }
+            //them  các tác giả của sách
+            new BLL.Sach_Tacgia().insert(tacgiasach, QL_Sach.idsachchon);
+            //them các thể loại của sách
+            new BLL.Sach_Theloai().insert(theloaisach, QL_Sach.idsachchon);
+            //update lại thông tin sách
+            new BLL.Sach_BLL().update(QL_Sach.idsachchon, txtname.Text, int.Parse(cbnxb.SelectedValue.ToString()), float.Parse(txtdongia.Text));
+        }
     }
 }

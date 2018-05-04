@@ -21,5 +21,14 @@ namespace BLL
                 new DAL.DAL().excuteupdate(query, sqlParameters, System.Data.CommandType.StoredProcedure);
             }
         }
+        public void delete(int idsach)
+        {
+            string query = "sach_theloai_dell";
+            SqlParameter[] sqlParameters =
+                {
+                    new SqlParameter("@idsach",idsach)    
+                };
+            new DAL.DAL().excuteupdate(query, sqlParameters, System.Data.CommandType.StoredProcedure);
+        }
     }
 }
