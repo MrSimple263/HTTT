@@ -68,7 +68,8 @@ namespace MN_BOOKSTORE
                 }
                 catch (Exception ex)
                 {
-                    //
+                    txtName.Clear();
+                    numCount.Maximum = 0;
                 }
             }
         }

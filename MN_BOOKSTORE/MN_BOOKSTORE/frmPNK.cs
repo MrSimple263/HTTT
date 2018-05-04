@@ -43,6 +43,7 @@ namespace MN_BOOKSTORE
                 if (s.Count() != 0)
                 {
                     txtName.Text = s.First().name.ToString();
+                    numCount.Maximum = 100000000;
                 }
                 else
                 {
@@ -51,7 +52,8 @@ namespace MN_BOOKSTORE
                 }
             }catch(Exception ex)
             {
-                //
+                txtName.Clear();
+                numCount.Maximum = 0;
             }
         }
 

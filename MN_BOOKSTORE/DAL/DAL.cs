@@ -20,10 +20,10 @@ namespace DAL
         public DAL()
         {
             connectionStringBuilder = new SqlConnectionStringBuilder();
-            connectionStringBuilder.DataSource = "MINH";
+            connectionStringBuilder.DataSource = "DESKTOP-OVPQSPS";
             connectionStringBuilder.InitialCatalog = "CUAHANGSACH";
-            connectionStringBuilder.UserID = "minh";
-            connectionStringBuilder.Password = "123";
+            connectionStringBuilder.UserID = "sa";
+            connectionStringBuilder.Password = "12345";
             //tạo kết nối tới cơ sở dữ liệu
             conn = new SqlConnection(connectionStringBuilder.ToString());
             conn.Open();

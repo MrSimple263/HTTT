@@ -105,6 +105,12 @@
     <Compile Include="frmQLKHO.Designer.cs">
       <DependentUpon>frmQLKHO.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQL_HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQL_HoaDon.Designer.cs">
+      <DependentUpon>frmQL_HoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="KiemKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLKHO.resx">
       <DependentUpon>frmQLKHO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQL_HoaDon.resx">
+      <DependentUpon>frmQL_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KiemKho.resx">
       <DependentUpon>KiemKho.cs</DependentUpon>

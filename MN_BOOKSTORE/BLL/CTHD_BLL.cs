@@ -25,5 +25,16 @@ namespace BLL
             };
             dAL.excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
         }
+
+        public DataTable getById(int id)
+        {
+            string query = "cthd_selectidhoadon";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id",id),
+
+            };
+            return dAL.excutedata(query, sqlParameters, CommandType.StoredProcedure);
+        }
     }
 }

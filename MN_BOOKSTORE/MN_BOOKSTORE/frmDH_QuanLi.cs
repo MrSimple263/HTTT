@@ -41,5 +41,10 @@ namespace MN_BOOKSTORE
         {
             new frmNhanVien().ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new frmQL_HoaDon().ShowDialog();
+        }
     }
 }

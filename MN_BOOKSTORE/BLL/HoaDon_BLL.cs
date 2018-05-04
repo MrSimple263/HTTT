@@ -31,5 +31,14 @@ namespace BLL
             };
             dAL.excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
         }
+        
+        public void delete(int id)
+        {
+            string query = "hoadon_delete";
+            SqlParameter[] sqlParameters = {
+                new SqlParameter("@id", id)
+            };
+            dAL.excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
+        }
     }
 }
