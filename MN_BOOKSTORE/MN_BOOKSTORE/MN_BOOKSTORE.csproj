@@ -51,6 +51,12 @@
     <Compile Include="Chitiet_Sach.Designer.cs">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKetNoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKetNoi.Designer.cs">
+      <DependentUpon>frmKetNoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPNK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +119,17 @@
     <Compile Include="TheLoai.Designer.cs">
       <DependentUpon>TheLoai.cs</DependentUpon>
     </Compile>
+    <Compile Include="update_Sach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_Sach.Designer.cs">
+      <DependentUpon>update_Sach.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Chitiet_Sach.resx">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKetNoi.resx">
+      <DependentUpon>frmKetNoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPNK.resx">
       <DependentUpon>frmPNK.cs</DependentUpon>
@@ -155,6 +170,9 @@
     <EmbeddedResource Include="TheLoai.resx">
       <DependentUpon>TheLoai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="update_Sach.resx">
+      <DependentUpon>update_Sach.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,6 +190,10 @@
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{eef6c445-ec30-4ef4-aa29-2167993f3bb6}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{5662771a-2d95-4090-93f7-79abef60da8d}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\VO\VO.csproj">
       <Project>{4be4226a-c82c-4289-92a4-2d6cae758f74}</Project>

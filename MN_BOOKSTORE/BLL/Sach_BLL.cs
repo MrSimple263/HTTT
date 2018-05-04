@@ -15,6 +15,14 @@ namespace BLL
             string query = "sach_selectall";
             return (new DAL.DAL().excutedata(query,null, CommandType.StoredProcedure));
         }
+        public DataTable getID(int idsach)
+        {
+            string query = "sach_selectid";
+            SqlParameter[] sqlParameters = {
+                new SqlParameter("@id",idsach)
+            };
+            return (new DAL.DAL().excutedata(query, sqlParameters, CommandType.StoredProcedure));
+        }
         public DataTable getAllWithCount()
         {
             string query = "sach_selectallwithcount";
@@ -29,6 +37,14 @@ namespace BLL
         {
             string query = "theloaisach";
             SqlParameter[] sqlParameters= {
+                new SqlParameter("@idsach",idsach)
+            };
+            return (new DAL.DAL().excutedata(query, sqlParameters, CommandType.StoredProcedure));
+        }
+        public DataTable tacgia(int idsach)
+        {
+            string query = "tacgiasach";
+            SqlParameter[] sqlParameters = {
                 new SqlParameter("@idsach",idsach)
             };
             return (new DAL.DAL().excutedata(query, sqlParameters, CommandType.StoredProcedure));

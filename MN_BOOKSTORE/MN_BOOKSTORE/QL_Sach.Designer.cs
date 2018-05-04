@@ -64,6 +64,7 @@
             this.btnsua.TabIndex = 2;
             this.btnsua.Text = "Sua";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnchitiet
             // 

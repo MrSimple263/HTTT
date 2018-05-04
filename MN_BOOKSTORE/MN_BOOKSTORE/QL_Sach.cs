@@ -15,6 +15,7 @@ namespace MN_BOOKSTORE
     {
         DataTable dtsach;
         int currentrow=-1;
+        public static int idsachchon;
         
         public QL_Sach()
         {
@@ -35,11 +36,13 @@ namespace MN_BOOKSTORE
         private void dgsach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             currentrow = e.RowIndex;
+            idsachchon = int.Parse(dgsach.Rows[currentrow].Cells[0].Value.ToString());
             btnxoa.Enabled=true;
             btnsua.Enabled = true;
             btnchitiet.Enabled = true;
-        }
 
+        }
+       
         private void QL_Sach_Load(object sender, EventArgs e)
         {
             load();
@@ -62,6 +65,13 @@ namespace MN_BOOKSTORE
         {
             new BLL.Sach_BLL().delete(int.Parse(dgsach.SelectedRows[0].Cells[0].Value.ToString()));
             load();
+        }
+
+        private void btnsua_Click(object sender, EventArgs e)
+        {
+            idsachchon=int.Parse(dgsach.SelectedRows[0].Cells[0].Value.ToString());
+            update_Sach update_Sach = new update_Sach();
+            update_Sach.ShowDialog();
         }
     }
 }

@@ -14,13 +14,16 @@ namespace DAL
     {
         SqlConnectionStringBuilder connectionStringBuilder;
         SqlConnection conn;
+        public static string datasource;
+        public static string userid;
+        public static string pass;
         public DAL()
         {
             connectionStringBuilder = new SqlConnectionStringBuilder();
-            connectionStringBuilder.DataSource = "DESKTOP-OVPQSPS";
+            connectionStringBuilder.DataSource = datasource;
             connectionStringBuilder.InitialCatalog = "CUAHANGSACH";
-            connectionStringBuilder.UserID = "sa";
-            connectionStringBuilder.Password = "12345";
+            connectionStringBuilder.UserID = userid;
+            connectionStringBuilder.Password = pass;
             //tạo kết nối tới cơ sở dữ liệu
             conn = new SqlConnection(connectionStringBuilder.ToString());
         }
