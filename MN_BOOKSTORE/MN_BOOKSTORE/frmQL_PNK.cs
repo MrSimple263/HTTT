@@ -20,6 +20,7 @@ namespace MN_BOOKSTORE
         private void btnCreate_Click(object sender, EventArgs e)
         {
             new frmPNK().ShowDialog();
+            dgvPNK.DataSource = new BLL.PNK_BLL().getAll();
         }
 
         private void frmQL_PNK_Load(object sender, EventArgs e)

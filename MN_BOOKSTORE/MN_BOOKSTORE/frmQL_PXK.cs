@@ -42,6 +42,7 @@ namespace MN_BOOKSTORE
         private void btnCreate_Click(object sender, EventArgs e)
         {
             new frmPXK().ShowDialog();
+            dgvPXK.DataSource = new BLL.PXK_BLL().getAll();
         }
 
         private void frmQL_PXK_Load(object sender, EventArgs e)
