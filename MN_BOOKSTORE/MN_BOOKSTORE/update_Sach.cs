@@ -51,8 +51,8 @@ namespace MN_BOOKSTORE
             dgtacgia.AllowUserToAddRows = false;
             //tac gia da chon
             DataTable dttacgiadachon = new BLL.Sach_BLL().tacgia(QL_Sach.idsachchon);
-            var listtacgia = from t in dttheloaidachon.AsEnumerable()
-                              select t.Field<int>("theloai");
+            var listtacgia = from t in dttacgiadachon.AsEnumerable()
+                              select t.Field<int>("tacgia");
             foreach (int i in listtacgia)
             {
                 foreach (DataGridViewRow row in dgtacgia.Rows)

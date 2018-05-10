@@ -53,12 +53,7 @@ namespace MN_BOOKSTORE
             BLL.Sach_BLL sach_BLL = new BLL.Sach_BLL();
             dtsach = sach_BLL.getAll();
             dgsach.DataSource = dtsach;
-            DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
-            dgsach.Columns.Add(checkBoxColumn);
             dgsach.AllowUserToAddRows = false;
-            dgsach.Rows[1].Cells[4].Value = true;
-
-
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
