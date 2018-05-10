@@ -22,5 +22,21 @@ namespace BLL
             };
             dAL.excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
         }
+
+        public DataTable getAll()
+        {
+            string query = "pnk_selectall";
+            return (new DAL.DAL().excutedata(query, null, CommandType.StoredProcedure));
+        }
+
+        public void delete(int id)
+        {
+            string query = "pnk_delete";
+            SqlParameter[] sqlParameters =
+            {
+                new SqlParameter("@id",id)
+            };
+            new DAL.DAL().excuteupdate(query, sqlParameters, CommandType.StoredProcedure);
+        }
     }
 }
