@@ -89,6 +89,8 @@ namespace MN_BOOKSTORE
             new BLL.Sach_Tacgia().insert(tacgiasach,idsach);
             //them các thể loại của sách
             new BLL.Sach_Theloai().insert(theloaisach,idsach);
+            MessageBox.Show("Đã thêm thành công");
+            Chitiet_Sach_Load(sender, e);
         }
     }
 }

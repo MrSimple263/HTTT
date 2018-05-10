@@ -39,6 +39,7 @@ namespace MN_BOOKSTORE
             new BLL.NhanVien_BLL().update(txtusername.Text, txtpass.Text,
                 txthoten.Text, txtngaysinh.Text, txtsdt.Text, int.Parse(cbchucvu.SelectedValue.ToString())
                 ,int.Parse(txtid.Text));
+            frmNhanVien_Load(sender, e);
         }
 
         private void dgnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,9 +49,14 @@ namespace MN_BOOKSTORE
             txtusername.Text = dgnhanvien.Rows[currentrow].Cells[1].Value.ToString();
             txtpass.Text = dgnhanvien.Rows[currentrow].Cells[2].Value.ToString();
             txthoten.Text= dgnhanvien.Rows[currentrow].Cells[3].Value.ToString();
-            txtsdt.Text = dgnhanvien.Rows[currentrow].Cells[4].Value.ToString();
-            txtngaysinh.Text = dgnhanvien.Rows[currentrow].Cells[5].Value.ToString();
+            txtsdt.Text = dgnhanvien.Rows[currentrow].Cells[5].Value.ToString();
+            txtngaysinh.Text = dgnhanvien.Rows[currentrow].Cells[4].Value.ToString();
             cbchucvu.SelectedValue= dgnhanvien.Rows[currentrow].Cells[6].Value.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmNhanVien_Load(sender, e);
         }
     }
 }

@@ -110,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmKetNoi";
             this.Text = "frmKetNoi";
+            this.Load += new System.EventHandler(this.frmKetNoi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

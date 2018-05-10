@@ -26,14 +26,22 @@ namespace MN_BOOKSTORE
             try
             {
                 new DAL.DAL();
+                this.Hide();
                 new frmLogin().ShowDialog();
-                this.Close();
+               
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
            
+        }
+
+        private void frmKetNoi_Load(object sender, EventArgs e)
+        {
+            txtserver.Text = "MINH";
+            txtusername.Text = "minh";
+            txtpass.Text = "123";
         }
     }
 }

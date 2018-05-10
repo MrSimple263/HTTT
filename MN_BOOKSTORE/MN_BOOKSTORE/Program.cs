@@ -16,7 +16,7 @@ namespace MN_BOOKSTORE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDH_QuanLi());
+            Application.Run(new frmKetNoi());
         }
     }
 }

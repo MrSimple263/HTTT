@@ -32,12 +32,12 @@ namespace BLL
         public void update(string username, string pass, string hoten, string ngaysinh,
             string sdt, int role,int id)
         {
-            string query = "nhanvien_insert";
+            string query = "nhanvien_update";
             SqlParameter[] sqlParameters =
             {
                 new SqlParameter("@username",username),
                 new SqlParameter("@pass",pass),
-                new SqlParameter("hoten",hoten),
+                new SqlParameter("@hoten",hoten),
                 new SqlParameter("@ngaysinh",ngaysinh),
                 new SqlParameter("@sdt",sdt),
                 new SqlParameter("@role",role),

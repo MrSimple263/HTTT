@@ -95,6 +95,7 @@ namespace MN_BOOKSTORE
             {
                 new CTHD_BLL().insert(sach.id, sach.dongia, idhoadon, sach.soluong);
             }
+            MessageBox.Show("Đã tạo hóa đơn");
         }
 
         //xóa một SÁCH trong hóa đơn
@@ -125,6 +126,8 @@ namespace MN_BOOKSTORE
             txtmsp.Clear();
             txttensach.Clear();
             txttongtien.Clear();
+            tongtien.Text = "";
+            s = 0;
         }
     }
 }
