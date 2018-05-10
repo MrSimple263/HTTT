@@ -111,6 +111,18 @@
     <Compile Include="frmQL_HoaDon.Designer.cs">
       <DependentUpon>frmQL_HoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQL_PNK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQL_PNK.Designer.cs">
+      <DependentUpon>frmQL_PNK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQL_PXK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQL_PXK.Designer.cs">
+      <DependentUpon>frmQL_PXK.cs</DependentUpon>
+    </Compile>
     <Compile Include="KiemKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +199,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQL_HoaDon.resx">
       <DependentUpon>frmQL_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQL_PNK.resx">
+      <DependentUpon>frmQL_PNK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQL_PXK.resx">
+      <DependentUpon>frmQL_PXK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KiemKho.resx">
       <DependentUpon>KiemKho.cs</DependentUpon>
