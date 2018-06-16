@@ -26,45 +26,77 @@ namespace MN_BOOKSTORE
             try
             {
                 int idsite = int.Parse(cbchinhanh.SelectedValue.ToString());
-                DataTable site = new DICTON_BLL().selectid(idsite);
-                foreach(DataRow row in site.Rows)
+                if (idsite == 0)
                 {
-                    DAL.DAL.datasource = row["IPADDRESS"].ToString();
-                    DAL.DAL.userid = row["ACCOUNT"].ToString();
-                    DAL.DAL.pass = row["PASS"].ToString();
-                    DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
-                }
-                Login_BLL login = new Login_BLL();
-                string mess = login.check(txtUserName.Text, txtPassWord.Text).Trim();
-                Debug.Write("tin nhan"+ mess);
-                if (mess.Equals(""))
-                {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Kết quả",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DICTON_BLL loginTRUNGTAM = new DICTON_BLL();
+                    string messTRUNGTAM = loginTRUNGTAM.checkTRUNGTAM(txtUserName.Text, txtPassWord.Text).Trim();
+                    Debug.Write("tinnhan" + messTRUNGTAM);
+                    if (messTRUNGTAM.Equals("0"))
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "kết quả", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập thành công", "Kết quả",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (messTRUNGTAM.Equals("1"))
+                        {
+                            this.Hide();
+                        }
+                        else if (messTRUNGTAM.Equals("2"))
+                        {
+                            MessageBox.Show("Bạn không có quyền Admin", "Kết quả",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thành công", "Kết quả",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    currentIdSite = idsite;
-                    if (mess.Equals("2")) {
-                        this.Hide();
-                        new frmDH_NhanVien().ShowDialog();
+                    DataTable site = new DICTON_BLL().selectid(idsite);
+                    foreach (DataRow row in site.Rows)
+                    {
+                        DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                        DAL.DAL.userid = row["ACCOUNT"].ToString();
+                        DAL.DAL.pass = row["PASS"].ToString();
+                        DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
                     }
-                    else if (mess.Equals("1")){
-                        this.Hide();
-                        new frmDH_QuanLi().ShowDialog();
+                    Login_BLL login = new Login_BLL();
+                    string mess = login.check(txtUserName.Text, txtPassWord.Text).Trim();
+                    Debug.Write("tin nhan" + mess);
+                    if (mess.Equals(""))
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Kết quả",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (mess.Equals("3")){
-                        this.Hide();
-                        new frmDH_ThuKho().ShowDialog();
+                    else
+                    {
+                        MessageBox.Show("Đăng nhập thành công", "Kết quả",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        currentIdSite = idsite;
+                        if (mess.Equals("2"))
+                        {
+                            this.Hide();
+                            new frmDH_NhanVien().ShowDialog();
+                        }
+                        else if (mess.Equals("1"))
+                        {
+                            this.Hide();
+                            new frmDH_QuanLi().ShowDialog();
+                        }
+                        else if (mess.Equals("3"))
+                        {
+                            this.Hide();
+                            new frmDH_ThuKho().ShowDialog();
+                        }
+
                     }
-                   
                 }
-            }catch(SqlException ex)
+            }
+            catch (SqlException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -87,6 +119,10 @@ namespace MN_BOOKSTORE
         {
             DataTable chinhanhs = new BLL.DICTON_BLL().selectall();
             cbchinhanh.DataSource = chinhanhs;
+            DataRow dtr = chinhanhs.NewRow();
+            dtr["NAME"] = "TRUNGTAMQUANLY";
+            dtr["ID"] = 0;
+            chinhanhs.Rows.Add(dtr);
             cbchinhanh.DisplayMember = "NAME";
             cbchinhanh.ValueMember = "ID";
         }

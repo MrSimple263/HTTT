@@ -70,5 +70,35 @@ namespace DAL
                 conn.Close();
             }
         }
+        public string excutescalar2(string query, SqlParameter[] sqlParameters, CommandType commandType)
+        {
+            conn.Open();
+            SqlCommand cmdupdate = new SqlCommand(query, conn);
+            if (sqlParameters != null)
+            {
+                foreach (SqlParameter param in sqlParameters)
+                {
+                    cmdupdate.Parameters.Add(param);
+                }
+            }
+            try
+            {
+                Debug.Write(cmdupdate.ExecuteScalar());
+                if (cmdupdate.ExecuteScalar() != null)
+                {
+                    return cmdupdate.ExecuteScalar().ToString();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Debug.Write(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return "";
+        }
     }
 }
