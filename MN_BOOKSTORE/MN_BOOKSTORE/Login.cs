@@ -15,6 +15,7 @@ namespace MN_BOOKSTORE
 {
     public partial class frmLogin : Form
     {
+        public static int currentIdSite;
         public frmLogin()
         {
             InitializeComponent();
@@ -45,6 +46,7 @@ namespace MN_BOOKSTORE
                 {
                     MessageBox.Show("Đăng nhập thành công", "Kết quả",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    currentIdSite = idsite;
                     if (mess.Equals("2")) {
                         this.Hide();
                         new frmDH_NhanVien().ShowDialog();
@@ -90,6 +92,11 @@ namespace MN_BOOKSTORE
         }
 
         private void pnLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbchinhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

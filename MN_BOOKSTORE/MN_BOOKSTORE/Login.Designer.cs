@@ -33,11 +33,11 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.cbchinhanh = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbchinhanh = new System.Windows.Forms.ComboBox();
             this.pnLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +92,27 @@
             this.pnLogin.TabIndex = 4;
             this.pnLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLogin_Paint);
             // 
+            // cbchinhanh
+            // 
+            this.cbchinhanh.FormattingEnabled = true;
+            this.cbchinhanh.Location = new System.Drawing.Point(139, 43);
+            this.cbchinhanh.Name = "cbchinhanh";
+            this.cbchinhanh.Size = new System.Drawing.Size(174, 21);
+            this.cbchinhanh.TabIndex = 5;
+            this.cbchinhanh.SelectedIndexChanged += new System.EventHandler(this.cbchinhanh_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Chọn Chi Nhánh";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -123,26 +144,6 @@
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Chọn Chi Nhánh";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // cbchinhanh
-            // 
-            this.cbchinhanh.FormattingEnabled = true;
-            this.cbchinhanh.Location = new System.Drawing.Point(139, 43);
-            this.cbchinhanh.Name = "cbchinhanh";
-            this.cbchinhanh.Size = new System.Drawing.Size(174, 21);
-            this.cbchinhanh.TabIndex = 5;
             // 
             // frmLogin
             // 

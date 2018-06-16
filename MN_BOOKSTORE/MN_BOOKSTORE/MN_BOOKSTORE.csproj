@@ -51,6 +51,12 @@
     <Compile Include="Chitiet_Sach.Designer.cs">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCongTac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCongTac.Designer.cs">
+      <DependentUpon>frmCongTac.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDH_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="Chitiet_Sach.resx">
       <DependentUpon>Chitiet_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCongTac.resx">
+      <DependentUpon>frmCongTac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDH_NhanVien.resx">
       <DependentUpon>frmDH_NhanVien.cs</DependentUpon>

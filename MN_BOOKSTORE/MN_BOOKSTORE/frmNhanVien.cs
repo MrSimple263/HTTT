@@ -32,31 +32,64 @@ namespace MN_BOOKSTORE
         {
             new BLL.NhanVien_BLL().insert(txtusername.Text, txtpass.Text,
                 txthoten.Text, txtngaysinh.Text, txtsdt.Text, int.Parse(cbchucvu.SelectedValue.ToString()));
+            MessageBox.Show("Thêm thành công!");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             new BLL.NhanVien_BLL().update(txtusername.Text, txtpass.Text,
-                txthoten.Text, txtngaysinh.Text, txtsdt.Text, int.Parse(cbchucvu.SelectedValue.ToString())
+                txthoten.Text, txtngaysinh.Text, txtsdt.Text, 
+                int.Parse(cbchucvu.SelectedValue.ToString())
                 ,int.Parse(txtid.Text));
             frmNhanVien_Load(sender, e);
-        }
-
-        private void dgnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int currentrow = e.RowIndex;
-            txtid.Text = dgnhanvien.Rows[currentrow].Cells[0].Value.ToString();
-            txtusername.Text = dgnhanvien.Rows[currentrow].Cells[1].Value.ToString();
-            txtpass.Text = dgnhanvien.Rows[currentrow].Cells[2].Value.ToString();
-            txthoten.Text= dgnhanvien.Rows[currentrow].Cells[3].Value.ToString();
-            txtsdt.Text = dgnhanvien.Rows[currentrow].Cells[5].Value.ToString();
-            txtngaysinh.Text = dgnhanvien.Rows[currentrow].Cells[4].Value.ToString();
-            cbchucvu.SelectedValue= dgnhanvien.Rows[currentrow].Cells[6].Value.ToString();
+            MessageBox.Show("Cập nhật thành công!");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             frmNhanVien_Load(sender, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(txtid.Text);
+                new BLL.NhanVien_BLL().delete(id);
+                MessageBox.Show("Xóa thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa");
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(txtid.Text);
+                new frmCongTac(id, txtusername.Text, txtpass.Text,
+                txthoten.Text, txtngaysinh.Text, txtsdt.Text,
+                int.Parse(cbchucvu.SelectedValue.ToString())).ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên");
+            }
+        }
+
+        private void dgnhanvien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int currentrow = e.RowIndex;
+            txtid.Text = dgnhanvien.Rows[currentrow].Cells[0].Value.ToString();
+            txtusername.Text = dgnhanvien.Rows[currentrow].Cells[1].Value.ToString();
+            txtpass.Text = dgnhanvien.Rows[currentrow].Cells[2].Value.ToString();
+            txthoten.Text = dgnhanvien.Rows[currentrow].Cells[3].Value.ToString();
+            txtsdt.Text = dgnhanvien.Rows[currentrow].Cells[5].Value.ToString();
+            txtngaysinh.Text = dgnhanvien.Rows[currentrow].Cells[4].Value.ToString();
+            cbchucvu.SelectedValue = dgnhanvien.Rows[currentrow].Cells[6].Value.ToString();
         }
     }
 }

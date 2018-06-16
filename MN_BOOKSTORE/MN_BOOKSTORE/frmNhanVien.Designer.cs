@@ -47,6 +47,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgnhanvien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +56,9 @@
             this.dgnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgnhanvien.Location = new System.Drawing.Point(25, 23);
             this.dgnhanvien.Name = "dgnhanvien";
-            this.dgnhanvien.Size = new System.Drawing.Size(669, 213);
+            this.dgnhanvien.Size = new System.Drawing.Size(673, 213);
             this.dgnhanvien.TabIndex = 0;
-            this.dgnhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgnhanvien_CellContentClick);
+            this.dgnhanvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgnhanvien_CellClick);
             // 
             // label1
             // 
@@ -124,6 +125,7 @@
             // 
             // txtid
             // 
+            this.txtid.Enabled = false;
             this.txtid.Location = new System.Drawing.Point(62, 261);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(175, 20);
@@ -174,16 +176,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(485, 338);
+            this.button1.Location = new System.Drawing.Point(480, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
             this.button1.Text = "delete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(485, 296);
+            this.button2.Location = new System.Drawing.Point(480, 296);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 16;
@@ -193,7 +196,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(580, 296);
+            this.button3.Location = new System.Drawing.Point(561, 296);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 17;
@@ -203,7 +206,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(580, 339);
+            this.button4.Location = new System.Drawing.Point(561, 339);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 18;
@@ -211,11 +214,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(656, 296);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(42, 66);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Đổi công tác";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 388);
+            this.ClientSize = new System.Drawing.Size(718, 376);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -265,5 +279,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
