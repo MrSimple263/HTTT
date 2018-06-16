@@ -14,7 +14,7 @@ namespace DAL
     {
         SqlConnectionStringBuilder connectionStringBuilder;
         SqlConnection conn;
-        public static string datasou;
+        public static string datasource;
         public static string userid;
         public static string pass;
         public static string catalog;
