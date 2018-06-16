@@ -12,9 +12,17 @@ namespace MN_BOOKSTORE
 {
     public partial class Chitiet_Sach : Form
     {
+        private string currentdatasource;
+        private string currentuserid;
+        private string currentpass;
+        private string currentcatalog;
         public Chitiet_Sach()
         {
             InitializeComponent();
+            currentdatasource = DAL.DAL.datasource;
+            currentuserid = DAL.DAL.userid;
+            currentpass = DAL.DAL.pass;
+            currentcatalog = DAL.DAL.catalog;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -82,15 +90,39 @@ namespace MN_BOOKSTORE
                 }
             }
             //them thông tin sách vào database
-            new BLL.Sach_BLL().insert(txtname.Text,int.Parse(cbnxb.SelectedValue.ToString()), float.Parse(txtdongia.Text));
+            DataTable sites = new BLL.DICTON_BLL().selectall();
+            foreach(DataRow row in sites.Rows)
+            {
+                DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                DAL.DAL.userid = row["ACCOUNT"].ToString();
+                DAL.DAL.pass = row["PASS"].ToString();
+                DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                new BLL.Sach_BLL().insert(txtname.Text, int.Parse(cbnxb.SelectedValue.ToString()), float.Parse(txtdongia.Text));
+            }
+
+           
+
             //Lay id sach vừa thêm
             int idsach=new BLL.Sach_BLL().getidmax();
-            //them  các tác giả của sách
-            new BLL.Sach_Tacgia().insert(tacgiasach,idsach);
-            //them các thể loại của sách
-            new BLL.Sach_Theloai().insert(theloaisach,idsach);
+            foreach (DataRow row in sites.Rows)
+            {
+                DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                DAL.DAL.userid = row["ACCOUNT"].ToString();
+                DAL.DAL.pass = row["PASS"].ToString();
+                DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                //them  các tác giả của sách
+                new BLL.Sach_Tacgia().insert(tacgiasach, idsach);
+                //them các thể loại của sách
+                new BLL.Sach_Theloai().insert(theloaisach, idsach);
+            }
+            
             MessageBox.Show("Đã thêm thành công");
             Chitiet_Sach_Load(sender, e);
+
+            DAL.DAL.datasource = currentdatasource;
+            DAL.DAL.userid = currentuserid;
+            DAL.DAL.pass = currentpass;
+            DAL.DAL.catalog = currentcatalog;
         }
     }
 }

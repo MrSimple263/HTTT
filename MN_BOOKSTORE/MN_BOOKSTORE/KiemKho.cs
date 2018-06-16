@@ -34,5 +34,10 @@ namespace MN_BOOKSTORE
                 sl.Text = "" + kho.kiemkho(int.Parse(txtidsach.Text));
             }
         }
+
+        private void KiemKho_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

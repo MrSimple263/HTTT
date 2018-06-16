@@ -92,6 +92,7 @@
             this.Controls.Add(this.txtidsach);
             this.Name = "KiemKho";
             this.Text = "KiemKho";
+            this.Load += new System.EventHandler(this.KiemKho_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

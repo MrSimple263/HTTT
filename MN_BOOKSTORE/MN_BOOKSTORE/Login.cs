@@ -24,6 +24,15 @@ namespace MN_BOOKSTORE
         {
             try
             {
+                int idsite = int.Parse(cbchinhanh.SelectedValue.ToString());
+                DataTable site = new DICTON_BLL().selectid(idsite);
+                foreach(DataRow row in site.Rows)
+                {
+                    DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                    DAL.DAL.userid = row["ACCOUNT"].ToString();
+                    DAL.DAL.pass = row["PASS"].ToString();
+                    DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                }
                 Login_BLL login = new Login_BLL();
                 string mess = login.check(txtUserName.Text, txtPassWord.Text).Trim();
                 Debug.Write("tin nhan"+ mess);
@@ -65,6 +74,24 @@ namespace MN_BOOKSTORE
             {
                 Application.Exit();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            DataTable chinhanhs = new BLL.DICTON_BLL().selectall();
+            cbchinhanh.DataSource = chinhanhs;
+            cbchinhanh.DisplayMember = "NAME";
+            cbchinhanh.ValueMember = "ID";
+        }
+
+        private void pnLogin_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

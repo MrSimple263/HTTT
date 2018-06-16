@@ -17,11 +17,24 @@ namespace DAL
         public static string datasource;
         public static string userid;
         public static string pass;
+        public static string catalog;
         public DAL()
         {
             connectionStringBuilder = new SqlConnectionStringBuilder();
             connectionStringBuilder.DataSource =datasource;
-            connectionStringBuilder.InitialCatalog = "CUAHANGSACH";
+            connectionStringBuilder.InitialCatalog =catalog;
+            connectionStringBuilder.UserID = userid;
+            connectionStringBuilder.Password = pass;
+            //tạo kết nối tới cơ sở dữ liệu
+            conn = new SqlConnection(connectionStringBuilder.ToString());
+            conn.Open();
+            conn.Close();
+        }
+        public DAL(string datasource,string userid,string pass,string catalog)
+        {
+            connectionStringBuilder = new SqlConnectionStringBuilder();
+            connectionStringBuilder.DataSource = datasource;
+            connectionStringBuilder.InitialCatalog = catalog;
             connectionStringBuilder.UserID = userid;
             connectionStringBuilder.Password = pass;
             //tạo kết nối tới cơ sở dữ liệu

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CTHD_BLL.cs" />
+    <Compile Include="DICTON_BLL.cs" />
     <Compile Include="HoaDon_BLL.cs" />
     <Compile Include="Kho_BLL.cs" />
     <Compile Include="Login_BLL.cs" />

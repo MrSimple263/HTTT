@@ -12,9 +12,17 @@ namespace MN_BOOKSTORE
 {
     public partial class update_Sach : Form
     {
+        private string currentdatasource;
+        private string currentuserid;
+        private string currentpass;
+        private string currentcatalog;
         public update_Sach()
         {
             InitializeComponent();
+            currentdatasource = DAL.DAL.datasource;
+            currentuserid = DAL.DAL.userid;
+            currentpass = DAL.DAL.pass;
+            currentcatalog = DAL.DAL.catalog;
         }
 
         private void update_Sach_Load(object sender, EventArgs e)
@@ -78,38 +86,51 @@ namespace MN_BOOKSTORE
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //xóa thông tin tác giả cũ
-            new BLL.Sach_Tacgia().dell(QL_Sach.idsachchon);
-            //xóa thông tin thể loại đã chon
-            new BLL.Sach_Theloai().delete(QL_Sach.idsachchon);
-            //them lại thông tin tác giả
-            List<int> tacgiasach = new List<int>();
-            //dua id cac tac gia da chon vao danh sach
-            foreach (DataGridViewRow row in dgtacgia.Rows)
+            DataTable sites = new BLL.DICTON_BLL().selectall();
+            foreach (DataRow drow in sites.Rows)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
-                if (Convert.ToBoolean(chk.Value) == true)
+                DAL.DAL.datasource = drow["IPADDRESS"].ToString();
+                DAL.DAL.userid = drow["ACCOUNT"].ToString();
+                DAL.DAL.pass = drow["PASS"].ToString();
+                DAL.DAL.catalog = drow["NAMEDATABASE"].ToString();
+                //xóa thông tin tác giả cũ
+                new BLL.Sach_Tacgia().dell(QL_Sach.idsachchon);
+                //xóa thông tin thể loại đã chon
+                new BLL.Sach_Theloai().delete(QL_Sach.idsachchon);
+                //them lại thông tin tác giả
+                List<int> tacgiasach = new List<int>();
+                //dua id cac tac gia da chon vao danh sach
+                foreach (DataGridViewRow row in dgtacgia.Rows)
                 {
-                    tacgiasach.Add(int.Parse(row.Cells[0].Value.ToString()));
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[3];
+                    if (Convert.ToBoolean(chk.Value) == true)
+                    {
+                        tacgiasach.Add(int.Parse(row.Cells[0].Value.ToString()));
+                    }
                 }
-            }
-            //thêm lại thông tin thể loại
-            List<int> theloaisach = new List<int>();
-            //dua id the loai vao danh sach
-            foreach (DataGridViewRow row in dgtheloai.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[2];
-                if (Convert.ToBoolean(chk.Value) == true)
+                //thêm lại thông tin thể loại
+                List<int> theloaisach = new List<int>();
+                //dua id the loai vao danh sach
+                foreach (DataGridViewRow row in dgtheloai.Rows)
                 {
-                    theloaisach.Add(int.Parse(row.Cells[0].Value.ToString()));
+                    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[2];
+                    if (Convert.ToBoolean(chk.Value) == true)
+                    {
+                        theloaisach.Add(int.Parse(row.Cells[0].Value.ToString()));
+                    }
                 }
+                //them  các tác giả của sách
+                new BLL.Sach_Tacgia().insert(tacgiasach, QL_Sach.idsachchon);
+                //them các thể loại của sách
+                new BLL.Sach_Theloai().insert(theloaisach, QL_Sach.idsachchon);
+                //update lại thông tin sách
+                new BLL.Sach_BLL().update(QL_Sach.idsachchon, txtname.Text, int.Parse(cbnxb.SelectedValue.ToString()), float.Parse(txtdongia.Text));
             }
-            //them  các tác giả của sách
-            new BLL.Sach_Tacgia().insert(tacgiasach, QL_Sach.idsachchon);
-            //them các thể loại của sách
-            new BLL.Sach_Theloai().insert(theloaisach, QL_Sach.idsachchon);
-            //update lại thông tin sách
-            new BLL.Sach_BLL().update(QL_Sach.idsachchon, txtname.Text, int.Parse(cbnxb.SelectedValue.ToString()), float.Parse(txtdongia.Text));
+
+            DAL.DAL.datasource = currentdatasource;
+            DAL.DAL.userid = currentuserid;
+            DAL.DAL.pass = currentpass;
+            DAL.DAL.catalog = currentcatalog;
         }
     }
 }

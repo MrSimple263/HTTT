@@ -12,9 +12,17 @@ namespace MN_BOOKSTORE
 {
     public partial class TheLoai : Form
     {
+        private string currentdatasource;
+        private string currentuserid;
+        private string currentpass;
+        private string currentcatalog;
         public TheLoai()
         {
             InitializeComponent();
+            currentdatasource = DAL.DAL.datasource;
+            currentuserid = DAL.DAL.userid;
+            currentpass = DAL.DAL.pass;
+            currentcatalog = DAL.DAL.catalog;
         }
 
         private void TheLoai_Load(object sender, EventArgs e)
@@ -41,14 +49,39 @@ namespace MN_BOOKSTORE
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            new BLL.TheLoai_BLL().insert(txtname.Text);
-            load();
-           
+            DataTable sites = new BLL.DICTON_BLL().selectall();
+            foreach (DataRow row in sites.Rows)
+            {
+                DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                DAL.DAL.userid = row["ACCOUNT"].ToString();
+                DAL.DAL.pass = row["PASS"].ToString();
+                DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                new BLL.TheLoai_BLL().insert(txtname.Text);
+                load();
+            }
+
+            DAL.DAL.datasource = currentdatasource;
+            DAL.DAL.userid = currentuserid;
+            DAL.DAL.pass = currentpass;
+            DAL.DAL.catalog = currentcatalog;
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            new BLL.TheLoai_BLL().update(int.Parse(txtid.Text),txtname.Text);
-            load();
+            DataTable sites = new BLL.DICTON_BLL().selectall();
+            foreach (DataRow row in sites.Rows)
+            {
+                DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                DAL.DAL.userid = row["ACCOUNT"].ToString();
+                DAL.DAL.pass = row["PASS"].ToString();
+                DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                new BLL.TheLoai_BLL().update(int.Parse(txtid.Text), txtname.Text);
+                load();
+            }
+
+            DAL.DAL.datasource = currentdatasource;
+            DAL.DAL.userid = currentuserid;
+            DAL.DAL.pass = currentpass;
+            DAL.DAL.catalog = currentcatalog;
         }
 
         public void load()

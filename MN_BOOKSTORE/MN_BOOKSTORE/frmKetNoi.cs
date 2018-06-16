@@ -20,7 +20,7 @@ namespace MN_BOOKSTORE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DAL.DAL.datasource = txtserver.Text;
+           // DAL.DAL.datasource = txtserver.Text;
             DAL.DAL.userid = txtusername.Text;
             DAL.DAL.pass = txtpass.Text;
             try
