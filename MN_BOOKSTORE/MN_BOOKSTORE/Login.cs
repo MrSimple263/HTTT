@@ -40,8 +40,9 @@ namespace MN_BOOKSTORE
                         MessageBox.Show("Đăng nhập thành công", "Kết quả",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (messTRUNGTAM.Equals("1"))
-                        {
-                            this.Hide();
+                        {                         
+                            Frm_QuanliSite f = new Frm_QuanliSite();
+                            f.ShowDialog();
                         }
                         else if (messTRUNGTAM.Equals("2"))
                         {

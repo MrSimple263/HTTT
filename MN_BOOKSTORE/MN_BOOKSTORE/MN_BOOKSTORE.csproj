@@ -129,6 +129,12 @@
     <Compile Include="frmQL_PXK.Designer.cs">
       <DependentUpon>frmQL_PXK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_QuanliSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QuanliSite.Designer.cs">
+      <DependentUpon>Frm_QuanliSite.cs</DependentUpon>
+    </Compile>
     <Compile Include="KiemKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,30 @@
     </Compile>
     <Compile Include="QL_Sach.Designer.cs">
       <DependentUpon>QL_Sach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Site_QuanliHoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Site_QuanliHoadon.Designer.cs">
+      <DependentUpon>Site_QuanliHoadon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Site_QuanliNhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Site_QuanliNhanvien.Designer.cs">
+      <DependentUpon>Site_QuanliNhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Site_QuanliPNK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Site_QuanliPNK.Designer.cs">
+      <DependentUpon>Site_QuanliPNK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Site_QuanliPXK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Site_QuanliPXK.Designer.cs">
+      <DependentUpon>Site_QuanliPXK.cs</DependentUpon>
     </Compile>
     <Compile Include="TacGia.cs">
       <SubType>Form</SubType>
@@ -215,6 +245,9 @@
     <EmbeddedResource Include="frmQL_PXK.resx">
       <DependentUpon>frmQL_PXK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QuanliSite.resx">
+      <DependentUpon>Frm_QuanliSite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KiemKho.resx">
       <DependentUpon>KiemKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +265,18 @@
     </Compile>
     <EmbeddedResource Include="QL_Sach.resx">
       <DependentUpon>QL_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Site_QuanliHoadon.resx">
+      <DependentUpon>Site_QuanliHoadon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Site_QuanliNhanvien.resx">
+      <DependentUpon>Site_QuanliNhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Site_QuanliPNK.resx">
+      <DependentUpon>Site_QuanliPNK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Site_QuanliPXK.resx">
+      <DependentUpon>Site_QuanliPXK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TacGia.resx">
       <DependentUpon>TacGia.cs</DependentUpon>
