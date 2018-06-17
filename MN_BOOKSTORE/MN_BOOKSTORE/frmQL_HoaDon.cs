@@ -27,6 +27,8 @@ namespace MN_BOOKSTORE
         private void btnCreate_Click(object sender, EventArgs e)
         {
             new TaoHoaDon().ShowDialog();
+            dgvHD.DataSource = new BLL.HoaDon_BLL().getAll();
+            dgvCTHD.DataSource = null;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
