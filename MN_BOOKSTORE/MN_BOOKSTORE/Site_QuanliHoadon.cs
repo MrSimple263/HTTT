@@ -42,5 +42,14 @@ namespace MN_BOOKSTORE
             HoaDon_BLL hoadon = new HoaDon_BLL();
             dgv_Hoadon.DataSource = hoadon.getAll();
         }
+
+        private void dgv_Hoadon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int id = int.Parse(dgv_Hoadon.CurrentRow.Cells[0].Value.ToString());
+            DataTable cthd = new BLL.CTHD_BLL().getById(id);
+            cthd.Columns.RemoveAt(0);
+            cthd.Columns.RemoveAt(2);
+            dgv_Chitiethoadon.DataSource = cthd;
+        }
     }
 }

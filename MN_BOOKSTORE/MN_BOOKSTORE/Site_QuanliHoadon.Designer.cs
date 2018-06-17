@@ -43,6 +43,7 @@
             this.dgv_Hoadon.Name = "dgv_Hoadon";
             this.dgv_Hoadon.Size = new System.Drawing.Size(366, 329);
             this.dgv_Hoadon.TabIndex = 0;
+            this.dgv_Hoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Hoadon_CellClick);
             // 
             // cbx_chinhanh
             // 

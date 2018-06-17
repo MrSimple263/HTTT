@@ -34,9 +34,9 @@ namespace MN_BOOKSTORE
             cb_chinhanh.ValueMember = "ID";
 
             //load toan bô nhân viên
-            foreach(DataRow row in chinhanhs.Rows)
+            foreach (DataRow row in chinhanhs.Rows)
             {
-                if(!row["ID"].ToString().Equals("0"))
+                if (!row["ID"].ToString().Equals("0"))
                 {
                     DAL.DAL.datasource = row["IPADDRESS"].ToString();
                     DAL.DAL.userid = row["ACCOUNT"].ToString();
@@ -46,9 +46,10 @@ namespace MN_BOOKSTORE
                     DataTable dataTable = nhanvien.getall();
                     nhanviens.Merge(dataTable);
                 }
-                
+
             }
             dgv_Nhanvien.DataSource = nhanviens;
+            dgv_Nhanvien.Columns[6].Visible = false;
             /*
         DataTable site1 = new DICTON_BLL().selectid(2);
         foreach (DataRow row in site1.Rows)
@@ -91,7 +92,7 @@ namespace MN_BOOKSTORE
 
         private void cb_chinhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void cb_chinhanh_SelectedValueChanged(object sender, EventArgs e)
@@ -115,10 +116,11 @@ namespace MN_BOOKSTORE
 
                 }
                 dgv_Nhanvien.DataSource = nhanviens;
+                dgv_Nhanvien.Columns[6].Visible = false;
             }
             else
             {
-                if (cb_chinhanh.SelectedValue.ToString()!= "System.Data.DataRowView")
+                if (cb_chinhanh.SelectedValue.ToString() != "System.Data.DataRowView")
                 {
                     DataTable chinhanhs = new DICTON_BLL().selectid(int.Parse(cb_chinhanh.SelectedValue.ToString()));
                     foreach (DataRow row in chinhanhs.Rows)
@@ -131,10 +133,49 @@ namespace MN_BOOKSTORE
                         nhanviens = nhanvien.getall();
                     }
                     dgv_Nhanvien.DataSource = nhanviens;
-
+                    dgv_Nhanvien.Columns[6].Visible = false;
                 }
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new BLL.NhanVien_BLL().insert(txtusername.Text, txtpass.Text,
+               txthoten.Text, txtngaysinh.Text, txtsdt.Text, int.Parse(cbchucvu.SelectedValue.ToString()));
+            MessageBox.Show("Thêm thành công!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new BLL.NhanVien_BLL().update(txtusername.Text, txtpass.Text,
+               txthoten.Text, txtngaysinh.Text, txtsdt.Text,
+               int.Parse(cbchucvu.SelectedValue.ToString())
+               , int.Parse(txtid.Text));
+            dgv_Nhanvien.DataSource = new NhanVien_BLL().getall();
+            dgv_Nhanvien.Columns[6].Visible = false;
+            MessageBox.Show("Cập nhật thành công!");
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(txtid.Text);
+                new BLL.NhanVien_BLL().delete(id);
+                MessageBox.Show("Xóa thành công!");
+                dgv_Nhanvien.DataSource = new NhanVien_BLL().getall();
+                dgv_Nhanvien.Columns[6].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa");
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Site_QuanliNhanvien_Load(sender, e);
         }
     }
 }
