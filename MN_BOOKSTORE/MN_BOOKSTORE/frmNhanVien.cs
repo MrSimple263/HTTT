@@ -73,6 +73,14 @@ namespace MN_BOOKSTORE
                 new frmCongTac(id, txtusername.Text, txtpass.Text,
                 txthoten.Text, txtngaysinh.Text, txtsdt.Text,
                 int.Parse(cbchucvu.SelectedValue.ToString())).ShowDialog();
+                //load lai du lieu
+                DataTable dtnhanvien = new BLL.NhanVien_BLL().getall();
+                DataTable dtrole = new BLL.Role_BLL().getall();
+                cbchucvu.DataSource = dtrole;
+                cbchucvu.DisplayMember = "name";
+                cbchucvu.ValueMember = "id";
+                dgnhanvien.DataSource = dtnhanvien;
+                dgnhanvien.Columns[6].Visible = false;
             }
             catch (Exception ex)
             {
