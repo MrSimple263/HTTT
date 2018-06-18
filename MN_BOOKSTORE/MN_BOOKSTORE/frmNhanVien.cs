@@ -99,5 +99,22 @@ namespace MN_BOOKSTORE
             txtngaysinh.Text = dgnhanvien.Rows[currentrow].Cells[4].Value.ToString();
             cbchucvu.SelectedValue = dgnhanvien.Rows[currentrow].Cells[6].Value.ToString();
         }
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dtnhanvien = new BLL.NhanVien_BLL().getall();
+            string ten = txt.Text.Trim();
+            if (ten.Length == 0)
+            {
+                dgnhanvien.DataSource = dtnhanvien;
+                dgnhanvien.Columns[6].Visible = false;
+            }
+            else
+            {
+                DataView datafilter = new DataView(dtnhanvien);
+                datafilter.RowFilter = "hoten Like '%" + ten + "%'";
+                dgnhanvien.DataSource = datafilter;
+            }
+        }
     }
 }
