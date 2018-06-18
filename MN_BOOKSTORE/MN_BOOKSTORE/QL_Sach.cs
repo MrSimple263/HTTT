@@ -25,6 +25,7 @@ namespace MN_BOOKSTORE
         {
             Chitiet_Sach chitiet_Sach = new Chitiet_Sach();
             chitiet_Sach.ShowDialog();
+            load();
         }
 
         private void button4_Click(object sender, EventArgs e)

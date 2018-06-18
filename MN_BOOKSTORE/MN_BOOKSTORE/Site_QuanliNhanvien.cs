@@ -143,5 +143,57 @@ namespace MN_BOOKSTORE
         {
             Site_QuanliNhanvien_Load(sender, e);
         }
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            string ten = txt.Text.Trim();
+            DataTable nhanviens = new DataTable();
+            if (cb_chinhanh.SelectedValue.ToString().Equals("0"))
+            {
+                DataTable chinhanhs = new DICTON_BLL().selectall();
+                foreach (DataRow row in chinhanhs.Rows)
+                {
+                    if (!row["ID"].ToString().Equals("0"))
+                    {
+                        DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                        DAL.DAL.userid = row["ACCOUNT"].ToString();
+                        DAL.DAL.pass = row["PASS"].ToString();
+                        DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                        NhanVien_BLL nhanvien = new NhanVien_BLL();
+                        DataTable dataTable = nhanvien.getall();
+                        nhanviens.Merge(dataTable);
+                    }
+
+                }
+            }
+            else
+            {
+                if (cb_chinhanh.SelectedValue.ToString() != "System.Data.DataRowView")
+                {
+                    DataTable chinhanhs = new DICTON_BLL().selectid(int.Parse(cb_chinhanh.SelectedValue.ToString()));
+                    foreach (DataRow row in chinhanhs.Rows)
+                    {
+                        DAL.DAL.datasource = row["IPADDRESS"].ToString();
+                        DAL.DAL.userid = row["ACCOUNT"].ToString();
+                        DAL.DAL.pass = row["PASS"].ToString();
+                        DAL.DAL.catalog = row["NAMEDATABASE"].ToString();
+                        NhanVien_BLL nhanvien = new NhanVien_BLL();
+                        nhanviens = nhanvien.getall();
+                    }
+                }
+
+            }
+            if (ten.Length == 0)
+            {
+                dgv_Nhanvien.DataSource = nhanviens;
+                dgv_Nhanvien.Columns[6].Visible = false;
+            }
+            else 
+            {
+                DataView datafilter = new DataView(nhanviens);
+                datafilter.RowFilter = "hoten Like '%"+ten+"%'";
+                dgv_Nhanvien.DataSource = datafilter;
+            }
+        }
     }
 }

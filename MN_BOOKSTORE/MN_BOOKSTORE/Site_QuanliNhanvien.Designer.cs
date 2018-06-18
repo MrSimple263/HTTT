@@ -49,6 +49,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Nhanvien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,11 +237,31 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "ID";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(447, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 22);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Tìm kiếm";
+            // 
+            // txt
+            // 
+            this.txt.Location = new System.Drawing.Point(536, 23);
+            this.txt.Name = "txt";
+            this.txt.Size = new System.Drawing.Size(165, 20);
+            this.txt.TabIndex = 38;
+            this.txt.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            // 
             // Site_QuanliNhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 450);
+            this.Controls.Add(this.txt);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -293,5 +315,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt;
     }
 }
